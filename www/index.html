@@ -7,17 +7,14 @@
     <script type="text/javascript">
     $(document).ready(function() {
         $("#insert").click(function() {
-            var nama_lengkap = $("#nama_lengkap").val();
-            var NIK = $("#NIK").val();
-            var jenis_kelamin = $("#jenis_kelamin").val();
-            var TTL = $("#TTL").val();
-            var agama = $("#agama").val();
-            var pekerjaan = $("#pekerjaan").val();
-            var dataString = "nama_lengkap=" + nama_lengkap + "&NIK=" + NIK + "&jenis_kelamin=" + jenis_kelamin + "&TTL=" + TTL + "&agama=" + agama + "&pekerjaan=" + pekerjaan + "&insert=";
-            if ($.trim(nama_lengkap).length > 0 & $.trim(NIK).length > 0 & $.trim(jenis_kelamin).length > 0 & $.trim(TTL).length > 0 & $.trim(agama).length > 0 & $.trim(pekerjaan).length > 0) {
+            var nama = $("#nama").val();
+            var barang = $("#barang").val();
+            var jumlah = $("#jumlah").val();
+            var dataString = "nama=" + nama + "&barang=" + barang + "&jumlah=" + jumlah + "&insert=";
+            if ($.trim(nama).length > 0 & $.trim(barang).length > 0 & $.trim(jumlah).length > 0 ) {
                 $.ajax({
                     type: "POST",
-                    url: "https://tugasutsrest.000webhostapp.com/appcordova/www/insert.php",
+                    url: "https://yelcobaweb.000webhostapp.com/appcordova-test/appcordova/appcordova/www/insert.php",
                     data: dataString,
                     crossDomain: true,
                     cache: false,
@@ -50,29 +47,18 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>Nama Lengkap</label>
-            <input type="text" id="nama_lengkap" value="" />
+            <label>Nama</label>
+            <input type="text" id="nama" value="" />
         </div>
         <div class="item">
-            <label>NIK</label>
-            <input type="text" id="NIK" value="" />
+            <label>Barang</label>
+            <input type="text" id="barang" value="" />
         </div>
         <div class="item">
-            <label>Jenis Kelamin</label>
-            <input type="text" id="jenis_kelamin" value="" />
+            <label>Jumlah</label>
+            <input type="text" id="jumlah" value="" />
         </div>
-        <div class="item">
-            <label>Tempat Tanggal Lahir</label>
-            <input type="text" id="TTL" value="" />
-        </div>
-        <div class="item">
-            <label>Agama</label>
-            <input type="text" id="agama" value="" />
-        </div>
-        <div class="item">
-            <label>Pekerjaan</label>
-            <input type="text" id="pekerjaan" value="" />
-        </div>
+        
         <div class="item">
             <input type="button" id="insert" class="button button-block" value="Insert" />
         </div>
