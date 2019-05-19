@@ -8,31 +8,22 @@
     <script type="text/javascript">
     $(document).ready(function() {
         var id = decodeURI(getUrlVars()["id"]);
-        var nama_lengkap = decodeURI(getUrlVars()["nama_lengkap"]);
-        var NIK = decodeURI(getUrlVars()["NIK"]);
-        var jenis_kelamin = decodeURI(getUrlVars()["jenis_kelamin"]);
-        var TTL = decodeURI(getUrlVars()["TTL"]);
-        var agama = decodeURI(getUrlVars()["agama"]);
-        var pekerjaan = decodeURI(getUrlVars()["pekerjaan"]);
+        var nama = decodeURI(getUrlVars()["nama"]);
+        var barang = decodeURI(getUrlVars()["barang"]);
+        var jumlah = decodeURI(getUrlVars()["jumlah"]);
         $("#id").val(id);
-        $("#nama_lengkap").val(nama_lengkap);
-        $("#NIK").val(NIK);
-        $("#jenis_kelamin").val(jenis_kelamin);
-        $("#TTL").val(TTL);
-        $("#agama").val(agama);
-        $("#pekerjaan").val(pekerjaan);
+        $("#nama").val(nama);
+        $("#barang").val(barang);
+        $("#jumlah").val(jumlah);
         $("#update").click(function() {
             var id = $("#id").val();
-            var nama_lengkap = $("#nama_lengkap").val();
-            var NIK = $("#NIK").val();
-            var jenis_kelamin = $("#jenis_kelamin").val();
-            var TTL = $("#TTL").val();
-            var agama = $("#agama").val();
-            var pekerjaan = $("#pekerjaan").val();
-            var dataString = "id=" + id + "&nama_lengkap=" + nama_lengkap + "&NIK=" + NIK + "&jenis_kelamin=" + jenis_kelamin + "&TTL=" + TTL + "&agama=" + agama +"&pekerjaan=" + pekerjaan + "&update=";
+            var nama = $("#nama").val();
+            var barang = $("#barang").val();
+            var jumlah = $("#jumlah").val();
+            var dataString = "id=" + id + "&nama=" + nama + "&barang=" + barang + "&jumlah=" + jumlah +  "&update=";
             $.ajax({
                 type: "POST",
-                url: "https://tugasutsrest.000webhostapp.com/appcordova/www/update.php",
+                url: "https://yelcobaweb.000webhostapp.com/appcordova-test/appcordova/appcordova/www/update.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -55,7 +46,7 @@
             var dataString = "id=" + id + "&delete=";
             $.ajax({
                 type: "GET",
-                url: "https://tugasutsrest.000webhostapp.com/appcordova/www/delete.php",
+                url: "https://yelcobaweb.000webhostapp.com/appcordova-test/appcordova/appcordova/www/delete.php",
                 data: dataString,
                 crossDomain: true,
                 cache: false,
@@ -88,28 +79,16 @@
     <div class="list">
         <input type="hidden" id="id" value="" />
         <div class="item">
-            <label>Nama Lengkap</label>
-            <input type="text" id="nama_lengkap" value="" />
+            <label>Nama</label>
+            <input type="text" id="nama" value="" />
         </div>
         <div class="item">
-            <label>NIK</label>
-            <input type="text" id="NIK" value="" />
+            <label>barang</label>
+            <input type="text" id="barang" value="" />
         </div>
         <div class="item">
-            <label>Jenis Kelamin</label>
-            <input type="text" id="jenis_kelamin" value="" />
-        </div>
-        <div class="item">
-            <label>Tempat Tanggal Lahir</label>
-            <input type="text" id="TTL" value="" />
-        </div>
-        <div class="item">
-            <label>Agama</label>
-            <input type="text" id="agama" value="" />
-        </div>
-        <div class="item">
-            <label>Pekerjaan</label>
-            <input type="text" id="pekerjaan" value="" />
+            <label>Jumlah</label>
+            <input type="text" id="jumlah" value="" />
         </div>
         <div class="item">
             <input type="button" id="update" class="button button-block" value="Update" />
