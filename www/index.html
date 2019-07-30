@@ -10,8 +10,10 @@
             var nama = $("#nama").val();
             var barang = $("#barang").val();
             var jumlah = $("#jumlah").val();
-            var dataString = "nama=" + nama + "&barang=" + barang + "&jumlah=" + jumlah + "&insert=";
-            if ($.trim(nama).length > 0 & $.trim(barang).length > 0 & $.trim(jumlah).length > 0 ) {
+            var harga  = $("#harga").val();
+            var garansi  = $("#garansi").val();
+            var dataString = "&nama=" + nama + "&barang=" + barang + "&jumlah=" + jumlah+ "&harga=" + harga + "&garansi=" + garansi + "&insert=";
+            if ($.trim(nama).length > 0 & $.trim(barang).length > 0 & $.trim(jumlah).length > 0 & $.trim(harga).length > 0 & $.trim(garansi).length > 0 ) {
                 $.ajax({
                     type: "POST",
                     url: "https://yelcobaweb.000webhostapp.com/appcordova-test/appcordova/appcordova/www/insert.php",
@@ -58,8 +60,15 @@
             <label>Jumlah</label>
             <input type="text" id="jumlah" value="" />
         </div>
-        
         <div class="item">
+            <label>Harga</label>
+           <input type="text" id="harga" value="" />
+            </div>
+        <div class="item">
+            <label>Garansi</label>
+            <input type="text" id="garansi" value="" />
+            </div>
+            <div class="item">
             <input type="button" id="insert" class="button button-block" value="Insert" />
         </div>
     </div>
