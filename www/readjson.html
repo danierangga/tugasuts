@@ -14,7 +14,9 @@
                 var nama = field.nama;
                 var barang = field.barang;
                 var jumlah = field.jumlah;
-                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama=" + nama + "&barang=" + barang + "&jumlah=" + jumlah + "'><h2>" + nama + " </h2><p>" + barang + "</p><p>" + jumlah +"</p></a>");
+                var harga = field.harga;
+                var garansi = field.garansi;
+                $("#listview").append("<a class='item' href='form.html?id=" + id + "&nama=" + nama + "&barang=" + barang + "&jumlah=" + jumlah +"&harga=" + harga+"&garansi=" + garansi+ "'><h2>" + nama + " </h2> <p>" + barang + "</p><p>" + jumlah +"</p> <p>" + harga + "</p> <p>" + garansi + "</p></a>");
             });
         });
     });
