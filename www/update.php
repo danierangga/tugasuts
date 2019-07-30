@@ -6,7 +6,9 @@
  $nama=$_POST['nama'];
  $barang=$_POST['barang'];
  $jumlah=$_POST['jumlah'];
- $q=mysqli_query($con,"UPDATE `data` SET `nama`='$nama',`barang`='$barang',`jumlah`='$jumlah' where `id`='$id'");
+ $harga=$_POST['harga'];
+ $garansi=$_POST['garansi'];
+ $q=mysqli_query($con,"UPDATE `data` SET `nama`='$nama',`barang`='$barang',`jumlah`='$jumlah',`harga`='$harga',`garansi`='$garansi' where `id`='$id'");
  if($q)
  echo "success";
  else
